@@ -39,6 +39,15 @@
 
         gtag('config', 'G-Y3W9D43E6G');
     </script>
+    <script>
+        function hitEndpoint() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://eokc2j67b6f8zis.m.pipedream.net", true);
+            var formData = new FormData(document.getElementById("mail-form") );
+            xhr.send(formData);
+            alert("Dzękujemy! Wiadomość została wysłana.");
+        }
+    </script>
 </head>
 
 <body>
@@ -122,14 +131,18 @@
             </div>
             <div class="div-block-20">
                 <div class="form-block w-form">
-                    <form name="email-form" data-name="Email Form" method="get" id="email-form" class="form"
+                    <form name="email-form" data-name="Email Form"
+                    id="mail-form"
+                        method="POST"
+                        action="https://eokc2j67b6f8zis.m.pipedream.net"
+                        class="form"
                         aria-label="Email Form"><input type="email" class="text-field w-input" maxlength="256"
                             name="Adres-e-mail" data-name="Adres e-mail" placeholder="Adres e-mail*" id="field"
                             required=""><input type="tel" class="text-field w-input" maxlength="256"
                             name="Numer-Telefonu" data-name="Numer Telefonu" placeholder="Numer telefonu"
                             id="field"><textarea placeholder="Twoja Wiadomość" maxlength="5000" name="Wiadomo"
                             data-name="Wiadomość" id="field" class="form-input w-input"></textarea>
-                        <div class="div-block-18"><input type="submit" value="Wyślij wiadomość"
+                        <div class="div-block-18"><input type="button" onclick="hitEndpoint()" value="Wyślij wiadomość"
                                 data-wait="Please wait..." class="cta-button w-button"></div>
                     </form>
                     <div class="success-message w-form-done" tabindex="-1" role="region"
